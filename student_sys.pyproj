@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{db34d4d8-b3d3-4721-984f-fb4129aa8322}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <InterpreterId />
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <PythonRunWebServerCommandArguments>runserver --settings $(DjangoSettingsModule) %SERVER_PORT% $(CommandLineArguments)</PythonRunWebServerCommandArguments>
+    <PythonDebugWebServerCommandArguments>runserver --noreload --settings $(DjangoSettingsModule) %SERVER_PORT% $(CommandLineArguments)</PythonDebugWebServerCommandArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="manage.py" />
+    <Compile Include="student\admin.py" />
+    <Compile Include="student\apps.py" />
+    <Compile Include="student\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="student\middlewares.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="student\migrations\0001_initial.py" />
+    <Compile Include="student\migrations\__init__.py" />
+    <Compile Include="student\models.py" />
+    <Compile Include="student\tests.py" />
+    <Compile Include="student\views.py" />
+    <Compile Include="student\__init__.py" />
+    <Compile Include="student_sys\settings.py" />
+    <Compile Include="student_sys\urls.py" />
+    <Compile Include="student_sys\wsgi.py" />
+    <Compile Include="student_sys\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="student" />
+    <Folder Include="student\migrations" />
+    <Folder Include="student\templates\" />
+    <Folder Include="student_sys" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="student\templates\index.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
